@@ -1,8 +1,8 @@
 package ru.barru.feature.product.presentation.mapper
 
-import ru.barru.feature.product.presentation.model.ProductUi
-import ru.barru.product.domain.entity.Product
+import ru.barru.feature.product.presentation.model.ProductModel
+import ru.barru.feature.product.domain.entity.Product
 
-interface UiMapper {
-    suspend fun toUi(product: Product): ProductUi
+internal interface UiMapper {
+    suspend fun toUi(product: Product): ProductModel
 }

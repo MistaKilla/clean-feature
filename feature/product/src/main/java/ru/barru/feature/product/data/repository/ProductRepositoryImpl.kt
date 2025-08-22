@@ -2,8 +2,8 @@ package ru.barru.feature.product.data.repository
 
 import ru.barru.feature.product.data.datasource.NetworkDatasource
 import ru.barru.feature.product.data.mapper.ProductDtoMapper
-import ru.barru.product.domain.entity.Product
-import ru.barru.product.domain.entity.ProductId
+import ru.barru.feature.product.domain.entity.Product
+import ru.barru.feature.product.domain.entity.ProductId
 import ru.barru.feature.product.domain.repository.ProductRepository
 
 internal class ProductRepositoryImpl(

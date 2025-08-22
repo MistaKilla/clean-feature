@@ -48,7 +48,15 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.material3)
+    implementation(libs.koin.android)
+    implementation(libs.decompose)
+
+    implementation(project(":feature:product-api"))
+    implementation(project(":feature:product"))
+    implementation(project(":common-koin"))
+    implementation(project(":navigation"))
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

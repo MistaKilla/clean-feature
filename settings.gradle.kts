@@ -23,3 +23,5 @@ rootProject.name = "Clean Feature Example"
 include(":app")
 include(":feature:product-api")
 include(":feature:product")
+include(":navigation")
+include(":common-koin")

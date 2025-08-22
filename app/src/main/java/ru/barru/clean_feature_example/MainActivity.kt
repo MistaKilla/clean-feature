@@ -4,44 +4,28 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.arkivanov.decompose.retainedComponent
 import ru.barru.clean_feature_example.ui.theme.CleanFeatureExampleTheme
+import ru.barru.common_koin.ComponentFactory
+import ru.barru.common_koin.koin
+import ru.barru.feature.product.createProductFlowComponent
+import ru.barru.feature.product.domain.entity.ProductId
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val rootComponent = retainedComponent { componentContext ->
+            val componentFactory = application.koin.get<ComponentFactory>()
+            componentFactory.createProductFlowComponent(
+                productId = ProductId((Math.random() * 1000).toInt().toString()),
+                componentContext)
+        }
         setContent {
             CleanFeatureExampleTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                rootComponent.Content()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CleanFeatureExampleTheme {
-        Greeting("Android")
     }
 }
