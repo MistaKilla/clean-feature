@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -51,9 +52,12 @@ dependencies {
     implementation(libs.androidx.ui.material3)
     implementation(libs.koin.android)
     implementation(libs.decompose)
+    implementation(libs.decompose.compose)
 
     implementation(project(":feature:product-api"))
     implementation(project(":feature:product"))
+    implementation(project(":feature:authorization-api"))
+    implementation(project(":feature:authorization"))
     implementation(project(":common-koin"))
     implementation(project(":navigation"))
 

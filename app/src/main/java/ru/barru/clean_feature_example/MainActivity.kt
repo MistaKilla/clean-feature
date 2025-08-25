@@ -8,8 +8,6 @@ import com.arkivanov.decompose.retainedComponent
 import ru.barru.clean_feature_example.ui.theme.CleanFeatureExampleTheme
 import ru.barru.common_koin.ComponentFactory
 import ru.barru.common_koin.koin
-import ru.barru.feature.product.createProductFlowComponent
-import ru.barru.feature.product.domain.entity.ProductId
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +16,7 @@ class MainActivity : ComponentActivity() {
 
         val rootComponent = retainedComponent { componentContext ->
             val componentFactory = application.koin.get<ComponentFactory>()
-            componentFactory.createProductFlowComponent(
-                productId = ProductId((Math.random() * 1000).toInt().toString()),
+            componentFactory.createRootComponent(
                 componentContext)
         }
         setContent {

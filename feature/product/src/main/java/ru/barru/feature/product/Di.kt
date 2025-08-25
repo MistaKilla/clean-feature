@@ -19,7 +19,7 @@ import ru.barru.feature.product.domain.usecase.GetProductUseCaseImpl
 import ru.barru.feature.product.navigation.ProductFlowComponentImpl
 import ru.barru.feature.product.presentation.ProductComponent
 import ru.barru.feature.product.presentation.ProductComponentImpl
-import ru.barru.feature.product.presentation.ProductFlowComponent
+import ru.barru.feature.product.navigation.ProductFlowComponent
 import ru.barru.feature.product.presentation.mapper.UiMapper
 import ru.barru.feature.product.presentation.mapper.UiMapperImpl
 

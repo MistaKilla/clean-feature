@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
 import ru.barru.common_koin.ComponentFactory
 import ru.barru.feature.product.domain.entity.ProductId
 import ru.barru.feature.product.presentation.ProductComponent
-import ru.barru.feature.product.presentation.ProductFlowComponent
+import ru.barru.feature.product.navigation.ProductFlowComponent
 import ru.barru.feature.product.createProductComponent
 import ru.barru.navigation.BaseChild
 import ru.barru.navigation.utils.toStateFlow

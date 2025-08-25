@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.arkivanov.decompose.extensions.compose.stack.Children
-import ru.barru.feature.product.presentation.ProductFlowComponent
 import ru.barru.feature.product.presentation.ProductUi
 
 @Composable
